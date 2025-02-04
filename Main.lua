@@ -189,24 +189,6 @@ do
 	end
 end
 
-local LeftGroupbox_Settings_555 = Credits:AddLeftGroupbox("Unload")
-	do
-		LeftGroupbox_Settings_555:AddToggle("Inori", {
-			Text = "Main developer",
-			Default = false,
-		})
-	end
-
-	LeftGroupbox_Settings_555:AddDivider()
-
-	do
-		LeftGroupbox_Settings_555:AddToggle("matas3535", {
-			Text = "Creator of Splix.",
-			Default = false,
-		})
-	end
-end
-
 Library:OnUnload(function()
 	Library.Unloaded = true
 	
