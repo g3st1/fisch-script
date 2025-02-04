@@ -189,17 +189,42 @@ do
 	end
 end
 
-local LeftGroupbox_Settings_555 = Credits:AddLeftGroupbox("Unload")
+local RightGroupbox_Settings_1 = Settings:AddRightGroupbox("Unload")
 do
-		LeftGroupbox_Settings_555:AddToggle("Inori", {
-		Text = "Main developer",
+	RightGroupbox_Settings_1:AddButton({
+		Text = "Press to unload",
+		DoubleClick = true,
+		Func = function()
+			Library:Unload()
+		end,
+	})
+end
+
+local LeftGroupbox_Credits_1 = Credits:AddLeftGroupbox("Credits")
+do
+	LeftGroupbox_Credits_1:CreateLabel("first", {
+		Text = "Inori - Main developer",
 		Default = false,
 	})
 end
 	
 do
-	LeftGroupbox_Settings_555:AddToggle("matas3535", {
-		Text = "Creator of Splix.",
+	LeftGroupbox_Credits_1:CreateLabel("second", {
+		Text = "matas3535 - Creator of Splix.",
+		Default = false,
+	})
+end
+
+do
+	LeftGroupbox_Credits_1:CreateLabel("third", {
+		Text = "Stefanuk - Extending library functionality.",
+		Default = false,
+	})
+end
+	
+do
+	LeftGroupbox_Credits_1:CreateLabel("fourth", {
+		Text = "Wally - Cleaning up verbose code, extending library functionality.",
 		Default = false,
 	})
 end
