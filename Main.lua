@@ -238,6 +238,8 @@ Library:OnUnload(function()
 	Library.Unloaded = true
 	
 	do
+		jump:Destroy()
+		speed:Destroy()
 		EnableCustomReelSize(false)
 		EnableInfiniteOxygen(false)
 		EnableInfinityJumps(false)
