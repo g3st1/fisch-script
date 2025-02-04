@@ -5,6 +5,13 @@ local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 local PlayerGui = Player.PlayerGui
 
+local Character = Player.Character or Player.CharacterAdded:Wait()
+local speed = Instance.new("NumberValue", Character)
+local jump = Instance.new("NumberValue", Character)
+
+speed = 16
+jump = 50
+
 local URL = "https://raw.githubusercontent.com/g3st1/LinoriaLib/main/"
 
 local Library = loadstring(game:HttpGet(URL .. "Library.lua"))()
@@ -165,7 +172,7 @@ do
 		})
 
 		RightGroupbox_Main_1:AddSlider("Slider_WalkSpeed", {
-			Text = "WalkSpeed(doesn't work)",
+			Text = "WalkSpeed",
 			Default = 16,
 			Min = 1,
 			Max = 200,
@@ -180,7 +187,7 @@ do
 		})
 
 		RightGroupbox_Main_1:AddSlider("Slider_JumpPower", {
-			Text = "JumpPower(doesn't work)",
+			Text = "JumpPower",
 			Default = 50,
 			Min = 1,
 			Max = 200,
