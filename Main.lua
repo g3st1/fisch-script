@@ -6,7 +6,7 @@ local Player = Players.LocalPlayer
 local PlayerGui = Player.PlayerGui
 
 local Character = Player.Character or Player.CharacterAdded:Wait()
-local hum = character:FindFirstChild("Humanoid")
+local hum = character["Humanoid"]
 
 local speed = Instance.new("NumberValue", Character)
 local jump = Instance.new("NumberValue", Character)
