@@ -6,11 +6,16 @@ local Player = Players.LocalPlayer
 local PlayerGui = Player.PlayerGui
 
 local Character = Player.Character or Player.CharacterAdded:Wait()
+local hum = character:FindFirstChild("Humanoid")
+
 local speed = Instance.new("NumberValue", Character)
 local jump = Instance.new("NumberValue", Character)
 
-speed = 16
-jump = 50
+speed.Name = "Speed"
+jump.Name = "Jump"
+
+speed.Value = hum.WalkSpeed
+jump.Value = hum.JumpPower
 
 local URL = "https://raw.githubusercontent.com/g3st1/LinoriaLib/main/"
 
