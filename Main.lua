@@ -7,15 +7,6 @@ local PlayerGui = Player.PlayerGui
 
 local Character = Player.Character or Player.CharacterAdded:Wait()
 
-local speed = Instance.new("NumberValue", Character)
-local jump = Instance.new("NumberValue", Character)
-
-speed.Name = "Speed"
-jump.Name = "Jump"
-
-speed.Value = 16
-jump.Value = 50
-
 local URL = "https://raw.githubusercontent.com/g3st1/LinoriaLib/main/"
 
 local Library = loadstring(game:HttpGet(URL .. "Library.lua"))()
