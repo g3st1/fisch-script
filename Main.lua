@@ -116,7 +116,7 @@ do
 		end
 		
 		RightGroupbox_Main_1:AddToggle("Toggle_InfiniteOxygen", {
-			Text = "Infinite Oxygen(Doesn't working yet!)",
+			Text = "Infinite Oxygen(doesn't work)",
 			Default = false,
 			Callback = function(Value)
 				EnableInfiniteOxygen(Value)
@@ -165,7 +165,7 @@ do
 		})
 
 		RightGroupbox_Main_1:AddSlider("Slider_WalkSpeed", {
-			Text = "WalkSpeed(Doesn't working yet!)",
+			Text = "WalkSpeed(doesn't work)",
 			Default = 16,
 			Min = 1,
 			Max = 200,
@@ -180,7 +180,7 @@ do
 		})
 
 		RightGroupbox_Main_1:AddSlider("Slider_JumpPower", {
-			Text = "JumpPower(Doesn't working yet!)",
+			Text = "JumpPower(doesn't work)",
 			Default = 50,
 			Min = 1,
 			Max = 200,
