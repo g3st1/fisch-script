@@ -189,15 +189,20 @@ do
 	end
 end
 
-local LeftGroupbox_Settings_1 = Settings:AddRightGroupbox("Unload")
-do
-	LeftGroupbox_Settings_1:AddButton({
-		Text = "Press to unload",
-		DoubleClick = true,
-		Func = function()
-			Library:Unload()
-		end,
-	})
+local LeftGroupbox_Settings_555 = Credits:AddLeftGroupbox("Unload")
+	do
+		LeftGroupbox_Settings_555:AddToggle("Inori", {
+			Text = "Main developer",
+			Default = false,
+		})
+	end
+	
+	do
+		LeftGroupbox_Settings_555:AddToggle("matas3535", {
+			Text = "Creator of Splix.",
+			Default = false,
+		})
+	end
 end
 
 Library:OnUnload(function()
