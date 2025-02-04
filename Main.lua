@@ -224,7 +224,14 @@ end
 	
 do
 	LeftGroupbox_Credits_1:AddToggle("fourth", {
-		Text = "Wally - Cleaning up verbose code, extending library functionality.",
+		Text = "Wally - Cleaning up verbose code.",
+		Default = false,
+	})
+end
+
+do
+	LeftGroupbox_Credits_1:AddToggle("fifth", {
+		Text = "6u3st - Creating this script.",
 		Default = false,
 	})
 end
