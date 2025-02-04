@@ -196,7 +196,9 @@ local LeftGroupbox_Settings_555 = Credits:AddLeftGroupbox("Unload")
 			Default = false,
 		})
 	end
-	
+
+	LeftGroupbox_Settings_555:AddDivider()
+
 	do
 		LeftGroupbox_Settings_555:AddToggle("matas3535", {
 			Text = "Creator of Splix.",
