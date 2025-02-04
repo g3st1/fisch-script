@@ -205,6 +205,9 @@ do
 	LeftGroupbox_Credits_1:AddButton("first", {
 		Text = "Inori - Main developer",
 		Default = false,
+		Func = function()
+			print("hi!!!")
+		end,
 	})
 end
 	
@@ -212,6 +215,9 @@ do
 	LeftGroupbox_Credits_1:AddButton("second", {
 		Text = "matas3535 - Creator of Splix.",
 		Default = false,
+		Func = function()
+			print("hi!!!")
+		end,
 	})
 end
 
@@ -219,6 +225,9 @@ do
 	LeftGroupbox_Credits_1:AddButton("third", {
 		Text = "Stefanuk - Extending library functionality.",
 		Default = false,
+		Func = function()
+			print("hi!!!")
+		end,
 	})
 end
 	
@@ -226,6 +235,9 @@ do
 	LeftGroupbox_Credits_1:AddButton("fourth", {
 		Text = "Wally - Cleaning up verbose code, extending library functionality.",
 		Default = false,
+		Func = function()
+			print("hi!!!")
+		end,
 	})
 end
 
