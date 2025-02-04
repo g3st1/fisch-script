@@ -202,28 +202,28 @@ end
 
 local LeftGroupbox_Credits_1 = Credits:AddLeftGroupbox("Credits")
 do
-	LeftGroupbox_Credits_1:CreateLabel("first", {
+	LeftGroupbox_Credits_1:AddButton("first", {
 		Text = "Inori - Main developer",
 		Default = false,
 	})
 end
 	
 do
-	LeftGroupbox_Credits_1:CreateLabel("second", {
+	LeftGroupbox_Credits_1:AddButton("second", {
 		Text = "matas3535 - Creator of Splix.",
 		Default = false,
 	})
 end
 
 do
-	LeftGroupbox_Credits_1:CreateLabel("third", {
+	LeftGroupbox_Credits_1:AddButton("third", {
 		Text = "Stefanuk - Extending library functionality.",
 		Default = false,
 	})
 end
 	
 do
-	LeftGroupbox_Credits_1:CreateLabel("fourth", {
+	LeftGroupbox_Credits_1:AddButton("fourth", {
 		Text = "Wally - Cleaning up verbose code, extending library functionality.",
 		Default = false,
 	})
