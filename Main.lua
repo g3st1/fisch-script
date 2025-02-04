@@ -14,8 +14,8 @@ local jump = Instance.new("NumberValue", Character)
 speed.Name = "Speed"
 jump.Name = "Jump"
 
-speed.Value = hum.WalkSpeed
-jump.Value = hum.JumpPower
+speed.Value = 16
+jump.Value = 50
 
 local URL = "https://raw.githubusercontent.com/g3st1/LinoriaLib/main/"
 
