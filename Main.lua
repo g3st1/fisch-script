@@ -216,22 +216,8 @@ do
 end
 
 do
-	LeftGroupbox_Credits_1:AddToggle("third", {
-		Text = "Stefanuk - Extending library functionality.",
-		Default = false,
-	})
-end
-	
-do
-	LeftGroupbox_Credits_1:AddToggle("fourth", {
-		Text = "Wally - Cleaning up verbose code.",
-		Default = false,
-	})
-end
-
-do
 	LeftGroupbox_Credits_1:AddToggle("fifth", {
-		Text = "6u3st - Creating this script.",
+		Text = "6u3st - Creator of this script.",
 		Default = false,
 	})
 end
