@@ -150,6 +150,7 @@ do
 		end
 
 		function SetCustomWalkSpeed(Bool: boolean)
+				print("hi")
 				if Bool then
 					print("yes")
 					Connect = UserInputService.JumpRequest:Connect(function()
