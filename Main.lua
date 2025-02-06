@@ -160,15 +160,15 @@ do
 						if Humanoid then
 							print("yes")
 							Humanoid.WalkSpeed = Bool
-							end
 						end
 					end
-				else
-					if Connect then
-						Connect:Disconnect()
-					end
+				end
+			else
+				if Connect then
+					Connect:Disconnect()
 				end
 			end
+		end)
 
 		RightGroupbox_Main_1:AddDivider()
 		
