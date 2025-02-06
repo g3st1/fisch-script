@@ -148,7 +148,14 @@ do
 				end
 			end
 		end
-		})
+
+			RightGroupbox_Main_1:AddToggle("Toggle_InfinityJumps", {
+				Text = "Infinite Jumps",
+				Default = false,
+				Callback = function(Value)
+					EnableInfinityJumps(Value)
+				end,
+			})
 
 		function SetCustomWalkSpeed(Bool: boolean)
 				if Bool then
@@ -166,14 +173,6 @@ do
 				end
 			end
 		end
-
-			RightGroupbox_Main_1:AddToggle("Toggle_InfinityJumps", {
-				Text = "Infinite Jumps",
-				Default = false,
-				Callback = function(Value)
-					EnableInfinityJumps(Value)
-				end,
-			})
 
 		RightGroupbox_Main_1:AddDivider()
 		
