@@ -147,7 +147,6 @@ do
 					Connect:Disconnect()
 				end
 			end
-		end
 
 			RightGroupbox_Main_1:AddToggle("Toggle_InfinityJumps", {
 				Text = "Infinite Jumps",
@@ -156,6 +155,7 @@ do
 					EnableInfinityJumps(Value)
 				end,
 			})
+		end
 
 		function SetCustomWalkSpeed(Bool: boolean)
 				if Bool then
