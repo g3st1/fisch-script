@@ -159,7 +159,9 @@ do
 							
 						if Humanoid then
 							print("yes")
-							Humanoid.WalkSpeed = Bool
+							while wait(.1) do
+								Humanoid.WalkSpeed = 40
+							end
 						end
 					end
 				end
