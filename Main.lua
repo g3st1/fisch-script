@@ -154,22 +154,13 @@ do
 					local Character = Player.Character
 						
 					if Character then
-						print("yes")
 						local Humanoid = Character:FindFirstChild("Humanoid")
 							
 						if Humanoid then
-							print("yes")
 							while wait(0.1) do
 								Humanoid.WalkSpeed = 40
 							end
 						end
-					end
-				else
-				local Character = Player.Character
-				if Character then
-					local Humanoid = Character:FindFirstChild("Humanoid")
-					if Humanoid then
-						Humanoid.WalkSpeed = 16
 					end
 				end
 			end
