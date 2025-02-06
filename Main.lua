@@ -151,14 +151,17 @@ do
 
 		function SetCustomWalkSpeed(Bool: boolean)
 				if Bool then
+					print("yes")
 					Connect = UserInputService.JumpRequest:Connect(function()
 						local Character = Player.Character
 						
 						if Character then
+							print("yes")
 							local Humanoid = Character:FindFirstChild("Humanoid")
 							
 							if Humanoid then
-								Humanoid.WalkSpeed = 40
+								print("yes")
+								Humanoid.WalkSpeed = Bool
 							end
 						end
 					end)
@@ -168,6 +171,8 @@ do
 					end
 				end
 			end
+
+		RightGroupbox_Main_1:AddDivider()
 		
 		RightGroupbox_Main_1:AddToggle("Toggle_CustomWalkSpeed", {
 			Text = "Custom WalkSpeed",
@@ -177,8 +182,6 @@ do
 			end,
 		})
 	end
-	
-	RightGroupbox_Main_1:AddDivider()
 	
 	do
 		RightGroupbox_Main_1:AddSlider("Slider_WalkSpeed", {
@@ -252,6 +255,7 @@ Library:OnUnload(function()
 	
 	do
 		EnableCustomReelSize(false)
+		SetCustomWalkSpeed(false)
 		EnableInfiniteOxygen(false)
 		EnableInfinityJumps(false)
 	end
