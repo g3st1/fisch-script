@@ -150,22 +150,19 @@ do
 		end
 
 		function SetCustomWalkSpeed(Bool: boolean)
-				print("hi")
 				if Bool then
-					print("yes")
-					Connect = UserInputService.JumpRequest:Connect(function()
-						local Character = Player.Character
+					local Character = Player.Character
 						
-						if Character then
-							print("yes")
-							local Humanoid = Character:FindFirstChild("Humanoid")
+					if Character then
+						print("yes")
+						local Humanoid = Character:FindFirstChild("Humanoid")
 							
-							if Humanoid then
-								print("yes")
-								Humanoid.WalkSpeed = Bool
+						if Humanoid then
+							print("yes")
+							Humanoid.WalkSpeed = Bool
 							end
 						end
-					end)
+					end
 				else
 					if Connect then
 						Connect:Disconnect()
