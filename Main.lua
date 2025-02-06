@@ -148,12 +148,32 @@ do
 				end
 			end
 		end
+
+		function SetCustomWalkSpeed(Bool: boolean)
+				if Bool then
+					Connect = UserInputService.JumpRequest:Connect(function()
+						local Character = Player.Character
+						
+						if Character then
+							local Humanoid = Character:FindFirstChild("Humanoid")
+							
+							if Humanoid then
+								Humanoid.WalkSpeed = 40
+							end
+						end
+					end)
+				else
+					if Connect then
+						Connect:Disconnect()
+					end
+				end
+			end
 		
-		RightGroupbox_Main_1:AddToggle("Toggle_InfinityJumps", {
-			Text = "Infinity Jumps",
+		RightGroupbox_Main_1:AddToggle("Toggle_CW", {
+			Text = "Custom WalkSpeed",
 			Default = false,
 			Callback = function(Value)
-				EnableInfinityJumps(Value)
+				SetCustomWalkSpeed(Value)
 			end,
 		})
 	end
@@ -161,11 +181,6 @@ do
 	RightGroupbox_Main_1:AddDivider()
 	
 	do
-		RightGroupbox_Main_1:AddToggle("Toggle_CustomWalkSpeed", {
-			Text = "Custom WalkSpeed",
-			Default = false,
-		})
-
 		RightGroupbox_Main_1:AddSlider("Slider_WalkSpeed", {
 			Text = "WalkSpeed",
 			Default = 16,
@@ -177,7 +192,7 @@ do
 	
 	do
 		RightGroupbox_Main_1:AddToggle("Toggle_CustomJumpPower", {
-			Text = "Custom JumpPower",
+			Text = "Custom JumpPower(doesn't work)",
 			Default = false,
 		})
 
@@ -220,6 +235,14 @@ end
 do
 	LeftGroupbox_Credits_1:AddToggle("fifth", {
 		Text = "6u3st - Creator of this script.",
+		Default = false,
+	})
+end
+
+local RightGroupbox_Credits_1 = Credits:AddRightGroupbox("Testers")
+do
+	RightGroupbox_Credits_1:AddToggle("n1n1n", {
+		Text = "kom_sx - first tester.",
 		Default = false,
 	})
 end
