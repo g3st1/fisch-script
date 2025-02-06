@@ -125,7 +125,7 @@ do
 			end,
 		})
 	end
-	
+
 	do
 		local Connect = nil
 		
@@ -159,18 +159,14 @@ do
 							
 						if Humanoid then
 							print("yes")
-							while wait(.1) do
+							while wait(0.1) do
 								Humanoid.WalkSpeed = 40
 							end
 						end
 					end
 				end
-			else
-				if Connect then
-					Connect:Disconnect()
-				end
 			end
-		end)
+		end
 
 		RightGroupbox_Main_1:AddDivider()
 		
@@ -207,7 +203,6 @@ do
 			Rounding = 0,
 		})
 	end
-end
 
 local RightGroupbox_Settings_1 = Settings:AddRightGroupbox("Unload")
 do
