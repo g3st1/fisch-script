@@ -169,7 +169,7 @@ do
 				end
 			end
 		
-		RightGroupbox_Main_1:AddToggle("Toggle_CW", {
+		RightGroupbox_Main_1:AddToggle("Toggle_CustomWalkSpeed", {
 			Text = "Custom WalkSpeed",
 			Default = false,
 			Callback = function(Value)
