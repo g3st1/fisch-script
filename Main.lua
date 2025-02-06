@@ -164,6 +164,13 @@ do
 							end
 						end
 					end
+				else
+				local Character = Player.Character
+				if Character then
+					local Humanoid = Character:FindFirstChild("Humanoid")
+					if Humanoid then
+						Humanoid.WalkSpeed = 16
+					end
 				end
 			end
 		end
