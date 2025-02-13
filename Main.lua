@@ -5,6 +5,8 @@ local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 local PlayerGui = Player.PlayerGui
 
+local Character = Player.Character or Player.CharacterAdded:Wait()
+
 local URL = "https://raw.githubusercontent.com/g3st1/LinoriaLib/main/"
 
 local Library = loadstring(game:HttpGet(URL .. "Library.lua"))()
@@ -123,6 +125,7 @@ do
 			end,
 		})
 	end
+end
 
 	do
 		local Connect = nil
@@ -147,7 +150,6 @@ do
 			end
 		end
 	end
-	end
 
 	RightGroupbox_Main_1:AddToggle("Toggle_InfinityJumps", {
 		Text = "Infinite Jumps",
@@ -163,6 +165,9 @@ do
 		RightGroupbox_Main_1:AddToggle("Toggle_CustomWalkSpeed", {
 			Text = "Custom WalkSpeed",
 			Default = false,
+			Callback = function(Value)
+				SetCustomWalkSpeed(Value)
+			end,
 		})
 
 		RightGroupbox_Main_1:AddSlider("Slider_WalkSpeed", {
@@ -235,6 +240,7 @@ Library:OnUnload(function()
 	
 	do
 		EnableCustomReelSize(false)
+		SetCustomWalkSpeed(false)
 		EnableInfiniteOxygen(false)
 		EnableInfinityJumps(false)
 	end
