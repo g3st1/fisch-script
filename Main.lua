@@ -163,11 +163,8 @@ end
 	
 	do
 		RightGroupbox_Main_1:AddToggle("Toggle_CustomWalkSpeed", {
-			Text = "Custom WalkSpeed",
+			Text = "Custom WalkSpeed(doesn't work)",
 			Default = false,
-			Callback = function(Value)
-				SetCustomWalkSpeed(Value)
-			end,
 		})
 
 		RightGroupbox_Main_1:AddSlider("Slider_WalkSpeed", {
@@ -240,7 +237,6 @@ Library:OnUnload(function()
 	
 	do
 		EnableCustomReelSize(false)
-		SetCustomWalkSpeed(false)
 		EnableInfiniteOxygen(false)
 		EnableInfinityJumps(false)
 	end
