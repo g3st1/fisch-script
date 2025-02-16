@@ -146,10 +146,10 @@ do
 						mainoxygen.Enabled = not Bool; oxygen.Enabled = not Bool
 
 						if Bool then
-							local ui = Head:FindFirstChild("ui")
-
-							if ui then
-								ui:Destroy()
+							for i,v in pairs(Head:GetChildren()) do
+								if v.Name == "ui" then
+									v:Destroy()
+								end
 							end
 						end
 					end
@@ -158,7 +158,7 @@ do
 		end
 		
 		RightGroupbox_Main_1:AddToggle("Toggle_InfiniteOxygen", {
-			Text = "Infinite Oxygen(doesn't work)",
+			Text = "Infinite Oxygen",
 			Default = false,
 			Callback = function(Value)
 				EnableInfiniteOxygen(Value)
