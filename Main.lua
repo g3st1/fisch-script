@@ -223,6 +223,9 @@ end
 		RightGroupbox_Main_1:AddToggle("Toggle_CustomJumpPower", {
 			Text = "Custom JumpPower(doesn't work)",
 			Default = false,
+			Callback = function(Value)
+				EnableCustomJumpPower(Value)
+			end,
 		})
 
 		RightGroupbox_Main_1:AddSlider("Slider_JumpPower", {
