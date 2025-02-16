@@ -17,7 +17,7 @@ local Toggles = Library.Toggles
 local Options = Library.Options
 
 local Window = Library:CreateWindow({
-	Title = "Best Fisch Script | by 6u3st",
+	Title = "Best Fisch Script",
 	Center = true,
 	AutoShow = true,
 	TabPadding = 8,
