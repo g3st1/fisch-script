@@ -132,11 +132,11 @@ do
 	do
 		function EnableInfiniteOxygen(Bool: boolean)
 			local Character = Player.Character
-			local client = StarterPlayer.StarterCharacterScripts:FindFirstChild("client")
+			local client = StarterPlayer.StarterCharacterScripts
 
 			if Character and client then
 				local Head = Character:WaitForChild("Head")
-				local mainclient = Character:FindFirstChild("client")
+				local mainclient = Character
 				local oxygen = client:FindFirstChild("oxygen")
 
 				if Head and mainclient and oxygen then
