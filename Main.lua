@@ -84,6 +84,26 @@ do
 		end
 	end
 
+	local function UpdateJumpPower()
+		local Humanoid = Character:FindFirstChild("Humanoid")
+
+		if Humanoid then
+			Humanoid.JumpPower = Options.Slider_JumpPower.Value
+		end
+	end
+
+	function EnableCustomJumpPower(Bool: boolean)
+		if Bool then
+			UpdateJumpPower()
+		else
+			local Humanoid = Character:FindFirstChild("Humanoid")
+
+			if Humanoid then
+				Humanoid.JumpPower = 50
+			end
+		end
+	end
+
 	LeftGroupbox_Main_1:AddToggle("Toggle_CustomReelSize", {
 		Text = "Custom Reel Size",
 		Default = false,
