@@ -64,6 +64,26 @@ do
 		end
 	end
 
+	local function UpdateWalkSpeed()
+		local Humanoid = Character:FindFirstChild("Humanoid")
+
+		if Humanoid then
+			Humanoid.WalkSpeed = Options.Slider_WalkSpeed.Value
+		end
+	end
+
+	function EnableCustomWalkSpeed(Bool: boolean)
+		if Bool then
+			UpdateWalkSpeed()
+		else
+			local Humanoid = Character:FindFirstChild("Humanoid")
+
+			if Humanoid then
+				Humanoid.WalkSpeed = 16
+			end
+		end
+	end
+
 	LeftGroupbox_Main_1:AddToggle("Toggle_CustomReelSize", {
 		Text = "Custom Reel Size",
 		Default = false,
@@ -165,6 +185,9 @@ end
 		RightGroupbox_Main_1:AddToggle("Toggle_CustomWalkSpeed", {
 			Text = "Custom WalkSpeed(doesn't work)",
 			Default = false,
+			Callback = function(Value)
+				EnableCustomWalkSpeed(Value)
+			end,
 		})
 
 		RightGroupbox_Main_1:AddSlider("Slider_WalkSpeed", {
@@ -204,29 +227,27 @@ end
 
 local LeftGroupbox_Credits_1 = Credits:AddLeftGroupbox("Credits")
 do
-	LeftGroupbox_Credits_1:AddToggle("first", {
-		Text = "Inori - Main developer",
-		Default = false,
-	})
+	LeftGroupbox_Credits_1:AddLabel("Inori - Main developer", false)
 end
 	
 do
-	LeftGroupbox_Credits_1:AddToggle("second", {
-		Text = "matas3535 - Creator of Splix.",
-		Default = false,
-	})
+	LeftGroupbox_Credits_1:AddLabel("matas3535 - Creator of Splix.", false)
 end
 
 do
-	LeftGroupbox_Credits_1:AddToggle("fifth", {
-		Text = "6u3st - Creator of this script.",
-		Default = false,
-	})
+	LeftGroupbox_Credits_1:AddLabel("Kchouzi - Fixed scripts.", false)
+end
+
+do
+	LeftGroupbox_Credits_1:AddLabel("6u3st - Creator of this script.", false)
 end
 
 local RightGroupbox_Credits_1 = Credits:AddRightGroupbox("Testers")
 do
 	RightGroupbox_Credits_1:AddLabel("kom_sx - first tester.", false)
+end
+do
+	RightGroupbox_Credits_1:AddLabel("Roblox2013Toni - second tester.", false)
 end
 
 Library:OnUnload(function()
@@ -234,6 +255,7 @@ Library:OnUnload(function()
 	
 	do
 		EnableCustomReelSize(false)
+		EnableCustomWalkSpeed(false)
 		EnableInfiniteOxygen(false)
 		EnableInfinityJumps(false)
 	end
