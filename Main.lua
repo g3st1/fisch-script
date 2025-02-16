@@ -226,10 +226,7 @@ end
 
 local RightGroupbox_Credits_1 = Credits:AddRightGroupbox("Testers")
 do
-	RightGroupbox_Credits_1:AddToggle("n1n1n", {
-		Text = "kom_sx - first tester.",
-		Default = false,
-	})
+	RightGroupbox_Credits_1:AddLabel("kom_sx - first tester.", false)
 end
 
 Library:OnUnload(function()
