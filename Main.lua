@@ -221,7 +221,7 @@ end
 	
 	do
 		RightGroupbox_Main_1:AddToggle("Toggle_CustomJumpPower", {
-			Text = "Custom JumpPower(doesn't work)",
+			Text = "Custom JumpPower",
 			Default = false,
 			Callback = function(Value)
 				EnableCustomJumpPower(Value)
@@ -279,6 +279,7 @@ Library:OnUnload(function()
 	do
 		EnableCustomReelSize(false)
 		EnableCustomWalkSpeed(false)
+		EnableCustomJumpPower(false)
 		EnableInfiniteOxygen(false)
 		EnableInfinityJumps(false)
 	end
