@@ -183,7 +183,7 @@ end
 	
 	do
 		RightGroupbox_Main_1:AddToggle("Toggle_CustomWalkSpeed", {
-			Text = "Custom WalkSpeed(doesn't work)",
+			Text = "Custom WalkSpeed",
 			Default = false,
 			Callback = function(Value)
 				EnableCustomWalkSpeed(Value)
