@@ -1,6 +1,9 @@
 local UserInputService = game:GetService("UserInputService")
 local StarterPlayer = game:GetService("StarterPlayer")
 local Players = game:GetService("Players")
+local VirtualInputManager = game:GetService("VirtualInputManager")
+local GuiService = game:GetService("GuiService")
+
 
 local Player = Players.LocalPlayer
 local PlayerGui = Player.PlayerGui
@@ -17,7 +20,7 @@ local Toggles = Library.Toggles
 local Options = Library.Options
 
 local Window = Library:CreateWindow({
-	Title = "Best Legit Fisch Script",
+	Title = "Best Fisch Script",
 	Center = true,
 	AutoShow = true,
 	TabPadding = 8,
@@ -127,7 +130,56 @@ do
 	})
 end
 
-local RightGroupbox_Main_1 = Settings:AddLeftGroupbox("Player")
+local RightGroupbox_Main_1 = Main:AddRightGroupbox("Automatic")
+do
+	local function PressKey(KeyName: string)
+    	local Key = Enum.KeyCode[KeyName]
+
+   		VirtualInputManager:SendKeyEvent(true, Key, false, nil)
+    	VirtualInputManager:SendKeyEvent(false, Key, false, nil)
+	end
+
+	RightGroupbox_Main_1:AddToggle("Shake", {
+		Text = "Auto Shake",
+		Default = false,
+		Callback = function(Value)
+			EnableAutoShake(Value)
+		end,
+	})
+
+	local Connect = nil
+
+	function EnableAutoShake(Bool: boolean)
+		if Bool then
+			Connect = PlayerGui.ChildAdded:Connect(function(t)
+				if t.Name == "shakeui" then
+					local frame = t:WaitForChild("safezone")
+					local nym = 1
+					frame.ChildAdded:Connect(function(f)
+						if f.Name == "button" then
+							nym += 1
+							local nym2 = nym
+
+							PressKey("BackSlash")
+
+							task.spawn(function()
+								repeat GuiService.SelectedObject = f if GuiService.SelectedObject == f then PressKey("Return") wait() end until nym ~= nym2
+							end)
+
+							PressKey("BackSlash")
+						end
+					end)
+				end
+			end)
+		else
+			if Connect then
+				Connect:Disconnect()
+			end
+		end
+	end
+end
+
+local LeftGroupbox_Settings_1 = Settings:AddLeftGroupbox("Player")
 do
 	do
 		function EnableInfiniteOxygen(Bool: boolean)
@@ -157,7 +209,7 @@ do
 			end
 		end
 		
-		RightGroupbox_Main_1:AddToggle("Toggle_InfiniteOxygen", {
+		LeftGroupbox_Settings_1:AddToggle("Toggle_InfiniteOxygen", {
 			Text = "Infinite Oxygen",
 			Default = false,
 			Callback = function(Value)
@@ -191,7 +243,7 @@ end
 		end
 	end
 
-	RightGroupbox_Main_1:AddToggle("Toggle_InfinityJumps", {
+	LeftGroupbox_Settings_1:AddToggle("Toggle_InfinityJumps", {
 		Text = "Infinite Jumps",
 		Default = false,
 		Callback = function(Value)
@@ -199,10 +251,10 @@ end
 		end,
 	})
 
-	RightGroupbox_Main_1:AddDivider()
+	LeftGroupbox_Settings_1:AddDivider()
 	
 	do
-		RightGroupbox_Main_1:AddToggle("Toggle_CustomWalkSpeed", {
+		LeftGroupbox_Settings_1:AddToggle("Toggle_CustomWalkSpeed", {
 			Text = "Custom WalkSpeed",
 			Default = false,
 			Callback = function(Value)
@@ -210,7 +262,7 @@ end
 			end,
 		})
 
-		RightGroupbox_Main_1:AddSlider("Slider_WalkSpeed", {
+		LeftGroupbox_Settings_1:AddSlider("Slider_WalkSpeed", {
 			Text = "WalkSpeed",
 			Default = 16,
 			Min = 1,
@@ -220,7 +272,7 @@ end
 	end
 	
 	do
-		RightGroupbox_Main_1:AddToggle("Toggle_CustomJumpPower", {
+		LeftGroupbox_Settings_1:AddToggle("Toggle_CustomJumpPower", {
 			Text = "Custom JumpPower",
 			Default = false,
 			Callback = function(Value)
@@ -228,7 +280,7 @@ end
 			end,
 		})
 
-		RightGroupbox_Main_1:AddSlider("Slider_JumpPower", {
+		LeftGroupbox_Settings_1:AddSlider("Slider_JumpPower", {
 			Text = "JumpPower",
 			Default = 50,
 			Min = 1,
@@ -237,9 +289,9 @@ end
 		})
 	end
 
-local RightGroupbox_Settings_1 = Settings:AddRightGroupbox("Unload")
+local RightGroupbox_Settings_2 = Settings:AddRightGroupbox("Mics")
 do
-	RightGroupbox_Settings_1:AddButton({
+	RightGroupbox_Settings_2:AddButton({
 		Text = "Press to unload",
 		DoubleClick = true,
 		Func = function()
@@ -248,29 +300,29 @@ do
 	})
 end
 
-local LeftGroupbox_Credits_1 = Credits:AddLeftGroupbox("Credits")
+local LeftGroupbox_Credits_1441 = Credits:AddLeftGroupbox("Credits")
 do
-	LeftGroupbox_Credits_1:AddLabel("Inori - Main developer", false)
+	LeftGroupbox_Credits_1441:AddLabel("Inori - Main developer", false)
 end
 	
 do
-	LeftGroupbox_Credits_1:AddLabel("matas3535 - Creator of Splix.", false)
+	LeftGroupbox_Credits_1441:AddLabel("matas3535 - Creator of Splix.", false)
 end
 
 do
-	LeftGroupbox_Credits_1:AddLabel("Kchouzi - Fixed scripts.", false)
+	LeftGroupbox_Credits_1441:AddLabel("Kchouzi - Original creator of this script.", true)
 end
 
 do
-	LeftGroupbox_Credits_1:AddLabel("6u3st - Creator of this script.", false)
+	LeftGroupbox_Credits_1441:AddLabel("6u3st - Updated/Fixed script.", false)
 end
 
-local RightGroupbox_Credits_1 = Credits:AddRightGroupbox("Testers")
+local LeftGroupbox_Credits_1444 = Credits:AddRightGroupbox("Testers")
 do
-	RightGroupbox_Credits_1:AddLabel("kom_sx - first tester.", false)
+	LeftGroupbox_Credits_1444:AddLabel("kom_sx - first tester.", false)
 end
 do
-	RightGroupbox_Credits_1:AddLabel("Roblox2013Toni - second tester.", false)
+	LeftGroupbox_Credits_1444:AddLabel("Roblox2013Toni - second tester.", false)
 end
 
 Library:OnUnload(function()
@@ -280,6 +332,7 @@ Library:OnUnload(function()
 		EnableCustomReelSize(false)
 		EnableCustomWalkSpeed(false)
 		EnableCustomJumpPower(false)
+		EnableAutoShake(false)
 		EnableInfiniteOxygen(false)
 		EnableInfinityJumps(false)
 	end
